@@ -1,4 +1,4 @@
-#Unity Sun Calculator
+# Unity Sun Calculator
 
 This project simulate position of the Sun based on the user's input location (latitude, longtitude), date and time.
 
