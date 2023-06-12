@@ -62,7 +62,7 @@ namespace nminhhoangit.SunCalculator
         {
             if (DateTime.TryParse(content, out DateTime date))
             {
-                IpfTime.SetTextWithoutNotify(date.ToString("HH:mm:ss"));
+                IpfTime.SetTextWithoutNotify(date.ToString("hh:mm:ss"));
             }
         }
 
@@ -141,13 +141,6 @@ namespace nminhhoangit.SunCalculator
             if (ImgForwardIcon) ImgForwardIcon.color = DemoSunCalculatorScript.Api.IsIncreaseTime ? Color.green : Color.white;
         }
 
-        private void ResetColorActionIcons()
-        {
-            if (ImgNowIcon) ImgNowIcon.color = Color.white;
-            if (ImgBackwardIcon) ImgBackwardIcon.color = Color.white;
-            if (ImgForwardIcon) ImgForwardIcon.color = Color.white;
-        }
-
         private void SettingOnClick()
         {
             DemoSunCalculatorScript.Api?.GetInputDatas((latitude, longtitude, dateTime) => {
@@ -158,6 +151,13 @@ namespace nminhhoangit.SunCalculator
         private void BackOnClick()
         {
             ClosePopup();
+        }
+
+        private void ResetColorActionIcons()
+        {
+            if (ImgNowIcon) ImgNowIcon.color = Color.white;
+            if (ImgBackwardIcon) ImgBackwardIcon.color = Color.white;
+            if (ImgForwardIcon) ImgForwardIcon.color = Color.white;
         }
 
         private void SetBtnUpdateInteract()
@@ -181,13 +181,13 @@ namespace nminhhoangit.SunCalculator
 
             if (!DateTime.TryParse(IpfDate.text, out DateTime dateInput))
             {
-                SetTextInputDataError("Invalid date!");
+                SetTextInputDataError("Invalid date! Sample correct format: yyyy-MM-dd");
                 return false;
             }
 
-            if (!DateTime.TryParse(IpfDate.text, out DateTime timeInput))
+            if (!DateTime.TryParse(IpfTime.text, out DateTime timeInput))
             {
-                SetTextInputDataError("Invalid time!");
+                SetTextInputDataError("Invalid time! Sample correct format: hh:mm:ss");
                 return false;
             }
 
@@ -226,7 +226,7 @@ namespace nminhhoangit.SunCalculator
 
                 if (DateTime.TryParse(IpfDate.text, out DateTime dateInput))
                 {
-                    if (DateTime.TryParse(IpfDate.text, out DateTime timeInput))
+                    if (DateTime.TryParse(IpfTime.text, out DateTime timeInput))
                     {
                         datetimeInput = dateInput.Date.Add(timeInput.TimeOfDay);
                     }
@@ -245,6 +245,7 @@ namespace nminhhoangit.SunCalculator
                 // All valid and callback data
                 ClosePopup(() =>
                 {
+                    Debug.Log($"UpdateOnClick success: {latitude}, {longtitude}, {datetimeInput}");
                     OnInputDatasChangedEvent?.Invoke(latitude, longtitude, datetimeInput);
                 });
             }
@@ -263,7 +264,7 @@ namespace nminhhoangit.SunCalculator
             IpfLatitude.text = latitude.ToString();
             IpfLongtitude.text = longtitude.ToString();
             IpfDate.text = curDateTime.ToString("yyyy-MM-dd");
-            IpfTime.text = curDateTime.ToString("HH:mm:ss");
+            IpfTime.text = curDateTime.ToString("hh:mm:ss");
             
             // Valiataion preset data input
             IsAllInputDatasValid();
@@ -286,7 +287,7 @@ namespace nminhhoangit.SunCalculator
         /// </summary>
         public void SetTextSunCalcUI(float latitude, float longtitude, DateTime calculatorDateTime)
         {
-            TxtDateTime.text = $"<size=24>lat: {latitude.ToString("F4")}, long: {longtitude.ToString("F4")}</size>\n<size=64>{calculatorDateTime.ToString("dd MMM yyyy")}</size>\n{calculatorDateTime.ToString("HH:mm:ss \"GMT\"zzz")}";
+            TxtDateTime.text = $"<size=24>lat: {latitude.ToString("F4")}, long: {longtitude.ToString("F4")}</size>\n<size=64>{calculatorDateTime.ToString("dd MMM yyyy")}</size>\n{calculatorDateTime.ToString("hh:mm:ss \"GMT\"zzz")}";
         }
     }
 }

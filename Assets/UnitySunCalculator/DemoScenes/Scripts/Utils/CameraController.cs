@@ -58,13 +58,16 @@ namespace nminhhoangit.SunCalculator
 
                 float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
                 float zoomAmount = deltaMagnitudeDiff * ZoomSpeed * Time.deltaTime;
-                float newFieldOfView = Mathf.Clamp(m_MainCamera.fieldOfView - zoomAmount, MinFieldOfView, MaxFieldOfView);
+                float newFieldOfView = Mathf.Clamp(m_MainCamera.fieldOfView + zoomAmount, MinFieldOfView, MaxFieldOfView);
                 m_MainCamera.fieldOfView = newFieldOfView;
             }
         }
 
         private void HandleRotation()
         {
+            if (Input.touchCount == 2)
+                return;
+
             // Rotate using mouse drag
             if (Input.GetMouseButtonDown(0))
             {

@@ -25,25 +25,11 @@ namespace nminhhoangit.SunCalculator
         private void Awake()
         {
             Api = this;
-
-            DisableSunTextureSkybox();
         }
 
         private void Start()
         {
             InitView();
-        }
-
-        private void DisableSunTextureSkybox()
-        {
-            // Get the skybox material from the rendering settings
-            Material skyboxMaterial = RenderSettings.skybox;
-
-            // Disable or remove the sun texture from the skybox material
-            skyboxMaterial.SetTexture("_SunTexture", null); // Set the sun texture to null
-
-            // Apply the modified skybox material back to the rendering settings
-            RenderSettings.skybox = skyboxMaterial;
         }
 
         private void OnDestroy()
