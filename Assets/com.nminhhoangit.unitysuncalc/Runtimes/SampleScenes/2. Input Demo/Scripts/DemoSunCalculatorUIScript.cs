@@ -22,7 +22,7 @@ namespace nminhhoangit.SunCalculator
         // Popup Input Data UIs
         public GameObject GoPopupInputData;
         public InputField IpfLatitude;
-        public InputField IpfLongtitude;
+        public InputField IpfLongitude;
         public InputField IpfDate;
         public InputField IpfTime;
         public Text TxtError;
@@ -43,7 +43,7 @@ namespace nminhhoangit.SunCalculator
             BtnBack?.onClick.AddListener(BackOnClick);
             BtnUpdate?.onClick.AddListener(UpdateOnClick);
             IpfLatitude?.onEndEdit.AddListener(content => SetBtnUpdateInteract());
-            IpfLongtitude?.onEndEdit.AddListener(content => SetBtnUpdateInteract());
+            IpfLongitude?.onEndEdit.AddListener(content => SetBtnUpdateInteract());
             IpfDate?.onEndEdit.AddListener(OnDateEndEditHandler);
             IpfTime?.onEndEdit.AddListener(OnTimeEndEditHandler);
         }
@@ -64,6 +64,8 @@ namespace nminhhoangit.SunCalculator
             {
                 IpfTime.SetTextWithoutNotify(date.ToString("hh:mm:ss"));
             }
+            
+            SetBtnUpdateInteract();
         }
 
         private void NowOnClick()
@@ -173,7 +175,7 @@ namespace nminhhoangit.SunCalculator
                 return false;
             }
 
-            if (!float.TryParse(IpfLongtitude.text, out float longtitude))
+            if (!float.TryParse(IpfLongitude.text, out float longtitude))
             {
                 SetTextInputDataError("Invalid longtitude!");
                 return false;
@@ -218,7 +220,7 @@ namespace nminhhoangit.SunCalculator
                     return;
                 }
 
-                if (!float.TryParse(IpfLongtitude.text, out longtitude))
+                if (!float.TryParse(IpfLongitude.text, out longtitude))
                 {
                     IsAllInputDatasValid();
                     return;
@@ -262,7 +264,7 @@ namespace nminhhoangit.SunCalculator
             GoPopupInputData.SetActive(true);
             //
             IpfLatitude.text = latitude.ToString();
-            IpfLongtitude.text = longtitude.ToString();
+            IpfLongitude.text = longtitude.ToString();
             IpfDate.text = curDateTime.ToString("yyyy-MM-dd");
             IpfTime.text = curDateTime.ToString("hh:mm:ss");
             

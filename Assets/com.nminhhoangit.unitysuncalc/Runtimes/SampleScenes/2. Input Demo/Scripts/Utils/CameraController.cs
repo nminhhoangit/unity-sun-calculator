@@ -5,10 +5,10 @@ namespace nminhhoangit.SunCalculator
     public class CameraController : MonoBehaviour
     {
         public Transform Target;
-        public float ZoomSpeed = 1f;
+        public float ZoomSpeed = 100f;
         public float RotateSpeed = 1f;
         public float MinFieldOfView = 30f;
-        public float MaxFieldOfView;
+        public float MaxFieldOfView = 100f;
 
         private Camera m_MainCamera;
         private float m_InitialDistance;

@@ -99,7 +99,7 @@ namespace nminhhoangit.SunCalculator
             }
 
             // Set text date time on UI
-            UIScript.SetTextSunCalcUI(SunCalculator.GetLatitude(), SunCalculator.GetLongtitude(), SunCalculator.GetDateTime());
+            UIScript.SetTextSunCalcUI(SunCalculator.GetLatitude(), SunCalculator.GetLongitude(), SunCalculator.GetDateTime());
         }
 
         public void GetInputDatas(Action<float, float, DateTime> callback)
@@ -107,7 +107,7 @@ namespace nminhhoangit.SunCalculator
             if (SunCalculator == null)
                 return;
 
-            callback?.Invoke(SunCalculator.GetLatitude(), SunCalculator.GetLongtitude(), SunCalculator.GetDateTime());
+            callback?.Invoke(SunCalculator.GetLatitude(), SunCalculator.GetLongitude(), SunCalculator.GetDateTime());
         }
     }
 }

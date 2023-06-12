@@ -1,0 +1,11 @@
+{
+  "displayName": "Unity Sun Calculator",
+  "name": "com.nminhhoangit.unitysuncalc",
+  "version": "1.0.0",
+  "unity": "2020.3",
+  "description": "Simulate position of the Sun based on the user's input location (latitude, longtitude), date and time",
+  "keywords": [
+    "unity sun calculator"
+  ],
+  "category": "Libraries"
+}

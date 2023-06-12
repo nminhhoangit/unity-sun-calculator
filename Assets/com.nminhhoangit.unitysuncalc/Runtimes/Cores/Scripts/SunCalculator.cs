@@ -16,15 +16,18 @@ namespace nminhhoangit.SunCalculator
         private float m_Latitude;
         //
         [SerializeField]
-        private float m_Longtitude;
+        private float m_Longitude;
         //
         [SerializeField]
+        [Range(1000, 9999)]
         private int m_Year = 1;
         //
         [SerializeField]
+        [Range(1, 12)]
         private int m_Month = 1;
         //
         [SerializeField]
+        [Range(1, 31)]
         private int m_Day = 1;
         //
         [SerializeField]
@@ -52,7 +55,7 @@ namespace nminhhoangit.SunCalculator
         /// </summary>
         public void UpdateDateTimeInputDatas(DateTime datetime)
         {
-            UpdateData(m_Latitude, m_Longtitude, datetime.Year, datetime.Month, datetime.Day, datetime.Hour, datetime.Minute, datetime.Second);
+            UpdateData(m_Latitude, m_Longitude, datetime.Year, datetime.Month, datetime.Day, datetime.Hour, datetime.Minute, datetime.Second);
         }
 
         /// <summary>
@@ -61,7 +64,7 @@ namespace nminhhoangit.SunCalculator
         public void UpdateData(float latitude, float longtitude, int year, int month, int day, int hour, int minute, int second)
         {
             m_Latitude = latitude;
-            m_Longtitude = longtitude;
+            m_Longitude = longtitude;
             m_Year = year;
             m_Month = month;
             m_Day = day;
@@ -79,7 +82,7 @@ namespace nminhhoangit.SunCalculator
         /// <summary>
         /// Get current longtitude data
         /// </summary>
-        public float GetLongtitude() { return m_Longtitude; }
+        public float GetLongitude() { return m_Longitude; }
 
         /// <summary>
         /// Get valid current data
@@ -104,7 +107,7 @@ namespace nminhhoangit.SunCalculator
             // Check valid before mapping new date & time data
             if (CheckValidDateTime(m_Year, m_Month, m_Day, m_Hour, m_Minute, m_Second))
             {
-                UpdatePosition(m_Latitude, m_Longtitude, m_Year, m_Month, m_Day, m_Hour, m_Minute, m_Second);
+                UpdatePosition(m_Latitude, m_Longitude, m_Year, m_Month, m_Day, m_Hour, m_Minute, m_Second);
             }
             else
             {
