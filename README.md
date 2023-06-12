@@ -23,7 +23,7 @@ This repository contains the source code for simulate position of the Sun based 
 <p align="center"><img src="Docs/Images/clone.png" width="350"/></p>
 
 * Or import `Unity Custom Package` below into your own `Unity Project`'s folder:
-    * [UnitySunCalculator.unitypackage](Release/UnitySunCalculator.unitypackage)
+    * [UnitySunCalculator.unitypackage](https://github.com/nminhhoangit/unity-sun-calculator/releases)
 <p align="center"><img src="Docs/Images/unitypackage.png" width="350"/></p>
 
 ## Features
