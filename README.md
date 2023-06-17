@@ -54,7 +54,7 @@ This basic scene using `SunCalculator` attachted directly into the `Directional 
 <p align="center"><img src="Docs/Images/demo-simple.gif" width="500"/></p>
 
 ### User Input Demo Scene
-In this scene, the `DemoSunCalculatorScript` and `DemoSunCalculatorUIScript` are equipped with a user input interface, allowing users to provide input data. The input data is then passed to the SunCalculator for the purpose of presenting the position of the Sun.
+In this scene, the `DemoSunCalculatorScript` and `DemoSunCalculatorUIScript` are equipped with a user input interface, allowing users to provide input data. Then the input data passed to the SunCalculator for the purpose of presenting the position of the Sun.
 * Scene Path: `Assets/com.nminhhoangit.unitysuncalc/Runtimes/SampleScenes/2. Input Demo/DemoSunCalcUserInput.unity`
 <p align="center"><img src="Docs/Images/input.gif" width="350"/> <img src="Docs/Images/preview.gif" width="350"/></p>
 
