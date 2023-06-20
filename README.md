@@ -1,5 +1,5 @@
 # Unity Sun Calculator
-This repository contains the source code for simulate position of the Sun based on the user's input location (`latitude`, `longtitude`), `date` and `time`.
+This repository contains the source code for simulate the position of the Sun based on the user's input location (`latitude`, `longitude`), `date` and `time`.
 
 <p align="center"><img src="Docs/Images/preview.gif" width="350"/></p>
 
@@ -48,7 +48,7 @@ Automatic playback of the date and time, moving it forward, backward.
 
 ## Sample Scenes
 ### Simple Demo Scene
-This basic scene using `SunCalculator` attachted directly into the `Directional Light` to simulate Sun position based on provided datas such as `latitude`, `longtitude`, `date` & `time`.
+This basic scene using `SunCalculator` attachted directly into the `Directional Light` to simulate Sun position based on provided datas such as `latitude`, `longitude`, `date` & `time`.
 * Scene Path: `Assets/com.nminhhoangit.unitysuncalc/Runtimes/SampleScenes/1. Simple Demo/DemoSimple.unity`
 
 <p align="center"><img src="Docs/Images/demo-simple.gif" width="500"/></p>
